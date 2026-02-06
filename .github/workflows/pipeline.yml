@@ -48,10 +48,19 @@ jobs:
         run: python capstone_project3/model_building/train.py
 
 
+  
   upload-mlflow_artifacts:
     needs: [data-prep,model-traning]
     runs-on: ubuntu-latest
     steps:
+      - name: Debug MLflow directory
+        run: 
+          echo "Current Directory :"
+          pwd
+          echo "List repo contents:"
+          ls -la
+          echo "Search for mlruns:"
+          find . -type d -name "mlruns"
       - uses: actions/upload-artifact@v4
         with:
           name: mlflow-runs
