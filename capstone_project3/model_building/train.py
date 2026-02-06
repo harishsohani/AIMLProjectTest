@@ -63,12 +63,8 @@ MLFLOW_EXPERIMENT = "PredictiveMaintenanceDevOnGitHub"
 
 
 # initialize mlflow - set tracking uri and experiment name
-mlflow.set_tracking_uri("http://localhost:5000")
+mlflow.set_tracking_uri("file:./mlruns")
 mlflow.set_experiment(MLFLOW_EXPERIMENT)
-
-# Create public tunnel for the UI
-#public_url = ngrok.connect(5000).public_url
-#print("MLflow UI is available at:", public_url)
 
 
 # --------------------------------------------------
@@ -122,7 +118,7 @@ xgb_model  = xgb.XGBClassifier(
     min_child_weight=1,
     scale_pos_weight=1.2,
     subsample=0.8,
-    random_state=RS,
+    random_state=RANDOM_STATE,
     n_jobs=-1
 )
 
@@ -170,7 +166,7 @@ with mlflow.start_run(run_name="xgb_pipeline_test"):
     test_metrics = eval_and_log(X_test, y_test, "test")
 
     # Save the model locally
-    model_path = "best_tourism_model.joblib"
+    model_path = "best_pred_maintenance.joblib"
     joblib.dump(xgb_model, model_path)
 
     # Log the model artifact
