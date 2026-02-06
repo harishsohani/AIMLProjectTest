@@ -1,0 +1,16 @@
+
+# library to interface with hugging face
+from huggingface_hub import HfApi
+
+import os
+
+# strore hugging face report id
+hf_repo_id = "harishsohani/AIMLEngineFailurePrediction"
+
+api = HfApi(token=os.getenv("HF_TOKEN"))
+api.upload_folder(
+    folder_path="capstone_project3/deployment",   # the local folder containing your files
+    repo_id=hf_repo_id,                           # the target repo
+    repo_type="space",                            # dataset, model, or space
+    path_in_repo="",                              # optional: subfolder path inside the repo
+)
