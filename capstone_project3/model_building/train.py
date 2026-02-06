@@ -67,8 +67,8 @@ mlflow.set_tracking_uri("http://localhost:5000")
 mlflow.set_experiment(MLFLOW_EXPERIMENT)
 
 # Create public tunnel for the UI
-public_url = ngrok.connect(5000).public_url
-print("MLflow UI is available at:", public_url)
+#public_url = ngrok.connect(5000).public_url
+#print("MLflow UI is available at:", public_url)
 
 
 # --------------------------------------------------
