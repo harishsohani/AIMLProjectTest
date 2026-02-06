@@ -174,7 +174,7 @@ with mlflow.start_run(run_name="xgb_pipeline_test"):
     print(f"Model saved as artifact at: {model_path}")
 
     # Upload to Hugging Face
-    hf_repo_id    = "harishsohani/MLOP-Project-Tourism"
+    hf_repo_id    = "harishsohani/AIMLProjectTest"
     hf_repo_type  = "model"
 
     # Step 1: Check if the space exists
