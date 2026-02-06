@@ -46,13 +46,6 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python capstone_project3/model_building/train.py
-
-
-  
-  upload-mlflow_artifacts:
-    needs: [data-prep,model-traning]
-    runs-on: ubuntu-latest
-    steps:
       - name: Debug MLflow directory
         run: 
           echo "Current Directory :"
@@ -65,7 +58,7 @@ jobs:
         with:
           name: mlflow-runs
           path: mlruns/
-
+ 
 
   deploy-hosting:
     runs-on: ubuntu-latest
