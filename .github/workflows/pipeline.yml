@@ -48,6 +48,16 @@ jobs:
         run: python capstone_project3/model_building/train.py
 
 
+  upload-mlflow_artifacts:
+    needs: [data-prep,model-traning]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mlflow-runs
+          path: mlruns/
+
+
   deploy-hosting:
     runs-on: ubuntu-latest
     needs: [model-traning,data-prep,register-dataset]
