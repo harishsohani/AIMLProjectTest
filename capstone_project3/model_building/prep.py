@@ -63,8 +63,8 @@ target_col = 'Engine_Condition'
 
 
 # Split into X (features) and y (target)
-X = df.drop(columns=[target_col])
-y = df[target_col]
+X = df_hf.drop(columns=[target_col])
+y = df_hf[target_col]
 
 # Perform train-test split.
 # Note 80% of data is used for training and 20% for testing
