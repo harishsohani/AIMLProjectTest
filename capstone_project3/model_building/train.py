@@ -193,7 +193,7 @@ with mlflow.start_run(run_name="xgb_pipeline_test"):
         repo_type=hf_repo_type,
     )
 
-    print ("\n Uploaded best model (best_pred_maintenance.joblib) to Hugging Face Model Repo\n")
+    print ("\n Uploaded best model (best_eng_fail_pred_model.joblib) to Hugging Face Model Repo\n")
 
     # display best pipeline
     # Configure scikit-learn to display estimators as diagrams
