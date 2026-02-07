@@ -187,8 +187,8 @@ with mlflow.start_run(run_name="xgb_pipeline_test"):
 
     # Upload model
     api.upload_file(
-        path_or_fileobj="best_pred_maintenance.joblib",
-        path_in_repo="best_pred_maintenance.joblib",
+        path_or_fileobj="best_eng_fail_pred_model.joblib",
+        path_in_repo="best_eng_fail_pred_model.joblib",
         repo_id=hf_repo_id,
         repo_type=hf_repo_type,
     )
