@@ -25,7 +25,7 @@ DATASET_PATH = "hf://datasets/harishsohani/AIMLProjectTest/engine_data.csv"
 RANDOM_STATE = 42
 
 # define test split size
-TEST_SIZE = 0.30   
+TEST_SIZE = 0.30
 
 # define report id and repo type
 hf_repo_id        = "harishsohani/AIMLProjectTest"

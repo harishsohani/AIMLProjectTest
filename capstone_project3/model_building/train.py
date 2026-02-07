@@ -66,7 +66,6 @@ MLFLOW_EXPERIMENT = "PredictiveMaintenanceDevOnGitHub"
 mlflow.set_tracking_uri("file:./mlruns")
 mlflow.set_experiment(MLFLOW_EXPERIMENT)
 
-
 # --------------------------------------------------
 # 2. Load Train and test data from Hugging Face Space
 # --------------------------------------------------
@@ -166,7 +165,7 @@ with mlflow.start_run(run_name="xgb_pipeline_test"):
     test_metrics = eval_and_log(X_test, y_test, "test")
 
     # Save the model locally
-    model_path = "best_pred_maintenance.joblib"
+    model_path = "best_eng_fail_pred_model.joblib"
     joblib.dump(xgb_model, model_path)
 
     # Log the model artifact
