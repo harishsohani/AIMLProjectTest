@@ -5,7 +5,7 @@ from huggingface_hub import HfApi
 import os
 
 # strore hugging face report id
-hf_repo_id = "harishsohani/AIMLEngineFailurePrediction"
+hf_repo_id = "harishsohani/AIMLProjectTest"
 
 api = HfApi(token=os.getenv("HF_TOKEN"))
 api.upload_folder(
