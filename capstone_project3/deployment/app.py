@@ -68,8 +68,6 @@ if st.button("Check fo Maintenance"):
 
     input_df = pd.DataFrame([input_data])
     
-    st.success(result)
-
     prediction = model.predict(input_df)[0]
 
     result = "Engine is **likely** needs maintenance." if prediction == 1 \
