@@ -58,7 +58,7 @@ if st.button("Check fo Maintenance"):
 
     # extract the data collected into a structure
     input_data = {
-        'Engine rpm'              : float(rpm),
+        'Engine_rpm'              : float(rpm),
         'Lub_oil_pressure'        : float(lub_oil_pressure),
         'Fuel_pressure'           : float(fuel_pressure),
         'Coolant_pressure'        : float(coolant_pressure),
