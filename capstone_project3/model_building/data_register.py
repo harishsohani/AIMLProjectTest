@@ -9,6 +9,8 @@ import os
 # store repo id and repo type
 # since we are registering data - we need data space
 hf_repo_id        = "harishsohani/AIMLProjectTest"        # Name of space in Hugging Face is 'AIMLProjectTest'
+#### Final name will be ####
+# hf_repo_id      = "harishsohani/AIMLPredictMaintenance"
 hf_data_repo_type = "dataset"                           # sicne we want to upload the data - specify repo type as 'dataset'
 
 # Initialize API client with Hugging Face Token

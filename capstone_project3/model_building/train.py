@@ -60,6 +60,8 @@ DATA_PATH = "capstone_project3/data/engine_data.csv"
 RANDOM_STATE = 42
 TEST_SIZE = 0.20   # final test split
 MLFLOW_EXPERIMENT = "PredictiveMaintenanceDevOnGitHub"
+### Final name will be ###
+# MLFLOW_EXPERIMENT = "PredictiveMaintenanceOnGitHub"
 
 
 # initialize mlflow - set tracking uri and experiment name
@@ -78,6 +80,14 @@ Xtrain_path = "hf://datasets/harishsohani/AIMLProjectTest/Xtrain.csv"
 Xtest_path = "hf://datasets/harishsohani/AIMLProjectTest/Xtest.csv"
 ytrain_path = "hf://datasets/harishsohani/AIMLProjectTest/ytrain.csv"
 ytest_path = "hf://datasets/harishsohani/AIMLProjectTest/ytest.csv"
+#### Final name will be ####
+'''
+Xtrain_path = "hf://datasets/harishsohani/AIMLPredictMaintenance/Xtrain.csv"
+Xtest_path = "hf://datasets/harishsohani/AIMLPredictMaintenance/Xtest.csv"
+ytrain_path = "hf://datasets/harishsohani/AIMLPredictMaintenance/ytrain.csv"
+ytest_path = "hf://datasets/harishsohani/AIMLPredictMaintenance/ytest.csv"
+'''
+
 
 # load train and test data
 X_train = pd.read_csv(Xtrain_path)

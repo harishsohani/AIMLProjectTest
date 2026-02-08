@@ -20,6 +20,8 @@ api = HfApi(token=os.getenv("HF_TOKEN"))
 
 # store file path of data set (csv file) in variable
 DATASET_PATH = "hf://datasets/harishsohani/AIMLProjectTest/engine_data.csv"
+#### Final name will be ####
+#DATASET_PATH = "hf://datasets/harishsohani/AIMLPredictMaintenance/engine_data.csv"
 
 # define random state for repeatibility
 RANDOM_STATE = 42
@@ -29,6 +31,8 @@ TEST_SIZE = 0.30
 
 # define report id and repo type
 hf_repo_id        = "harishsohani/AIMLProjectTest"
+#### Final name will be ####
+# hf_repo_id      = "harishsohani/AIMLPredictMaintenance"
 
 hf_data_repo_type = "dataset"
 

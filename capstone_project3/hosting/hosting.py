@@ -6,6 +6,8 @@ import os
 
 # strore hugging face report id
 hf_repo_id = "harishsohani/AIMLProjectTest"
+#### Final name will be ####
+# hf_repo_id = "harishsohani/AIMLPredictMaintenance"
 
 api = HfApi(token=os.getenv("HF_TOKEN"))
 api.upload_folder(
