@@ -205,6 +205,38 @@ with mlflow.start_run(run_name="xgb_pipeline_test"):
 
     print ("\n Uploaded best model (best_eng_fail_pred_model.joblib) to Hugging Face Model Repo\n")
 
+    # ---------------------------------------
+    # Upload file to Back End
+    # After transitioning we can remove above upload
+    # ---------------------------------------
+
+    # Upload to Hugging Face
+    hf_repo_id    = "harishsohani/AIMLProjectTestBackEnd"
+
+    try:
+        create_repo (
+            repo_id=hf_repo_id,           # Name of the space to be created for back end
+            repo_type="space",            # repository type as 'space'
+            space_sdk="docker",           # Specify the space SDK as "docker" to create a Docker space
+            private=False                 # This is set as False, so that it is accessble to all
+        )
+        print(f"Backend space created: {hf_repo_id}")
+    except Exception as e:
+        # Handle potential errors during repository creation
+        if "RepositoryAlreadyExistsError" in str(e):
+            print("Repository already exists. Skipping creation.")
+        else:
+            print(f"Error in creating repository: {e}")
+
+    # Upload model
+    api.upload_file(
+        path_or_fileobj="best_eng_fail_pred_model.joblib",
+        path_in_repo="best_eng_fail_pred_model.joblib",
+        repo_id=hf_repo_id,
+        repo_type="space",
+    )
+
+
     # display best pipeline
     # Configure scikit-learn to display estimators as diagrams
     sklearn.set_config(display='diagram')
