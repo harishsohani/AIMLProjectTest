@@ -1,6 +1,7 @@
 
-# library to interface with hugging face
-from huggingface_hub import HfApi
+# import libraries for enabling interaction with Hugging Face
+from huggingface_hub.utils import RepositoryNotFoundError, HfHubHTTPError
+from huggingface_hub import HfApi, create_repo
 
 import os
 
