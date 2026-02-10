@@ -34,7 +34,7 @@ try:
         space_sdk="docker",           # Specify the space SDK as "docker" to create a Docker space
         private=False                 # This is set as False, so that it is accessble to all
     )
-     print(f"Backend space created: {hf_repo_id_backend}")
+    print(f"Backend space created: {hf_repo_id_backend}")
 except Exception as e:
     # Handle potential errors during repository creation
     if "RepositoryAlreadyExistsError" in str(e):
