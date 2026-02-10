@@ -71,10 +71,12 @@ try:
         private=False                     # This is set as False, so that it is accessble to all
     )
     print(f"Frontend space created: {hf_repo_id_frontend}")
-except RepositoryAlreadyExistsError:
-    print("Frontend space already exists. Skipping creation.")
 except Exception as e:
-    print(f"Error creating frontend space: {e}")
+    # Handle potential errors during repository creation
+    if "RepositoryAlreadyExistsError" in str(e):
+        print("Frontend space already exists. Skipping creation.")
+    else:
+        print(f"Error creating frontend space: {e}")
 
 
 # ---------------------------------------
