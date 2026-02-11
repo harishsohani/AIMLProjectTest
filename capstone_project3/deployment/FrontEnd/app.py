@@ -27,6 +27,7 @@ model_path = hf_hub_download(
     repo_id="harishsohani/AIMLProjectTest",
     #### Final name will be ####
     # hf_repo_id = "harishsohani/AIMLPredictMaintenance"
+    repo_type="space",
     filename="best_eng_fail_pred_model.joblib"
     )
 model = joblib.load(model_path)
@@ -117,13 +118,31 @@ if st.button("Check fo Maintenance"):
 
     prediction = model.predict(input_df)[0]
 
-    result = "Engine is **likely** needs maintenance." if prediction == 1 \
-                 else "Engine does not need any maintenance"
+    response = requests.post (
+        "https://harishsohani-AIMLProjectTestBackEnd.hf.space/v1/EngPredMaintenance",
+        json=input_data
+        )
 
-    st.success(result)
+    if response.status_code == 200:
+        ## get result as json
+        result = response.json ()
+
+        ## Get Sales Prediction Value
+        prediction_from_backend = result.get ("NeedsMaintenance")  # Extract only the value
+
+        # generate output string
+        if prediction_from_backend == 1:
+            resultstr = "Engine **likely** needs maintenance."
+        else:
+            resultstr = "Engine does not need any maintenance"
+
+        st.success(resultstr)
+        
+    else:
+        st.error (f"Error processing request- Status Code : {response.status_code}")
 
     # Show the etails of data frame prepared from user input
     st.subheader("📦 Input Data Summary")
-    st.json(input_df)
+    st.dataframe (input_df)
 
 

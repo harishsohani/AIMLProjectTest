@@ -7,7 +7,7 @@ from flask import Flask, request, jsonify
 pred_mainteanance_api = Flask ("Engine Maintenance Predictor")
 
 # Load the trained churn prediction model
-model = joblib.load ("???.joblib")
+model = joblib.load ("best_eng_fail_pred_model.joblib.joblib")
 
 # Define a route for the home page
 @pred_mainteanance_api.get ('/')
