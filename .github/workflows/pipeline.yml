@@ -46,7 +46,7 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python capstone_project3/model_building/train.py
-      - name: Debug MLflow directory
+      - name: Upload MLflow Artifacts
         run: 
           echo "Current Directory :"
           pwd
